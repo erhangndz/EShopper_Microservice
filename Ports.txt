@@ -1,1 +1,2 @@
-Catalog => https://localhost:7242
+Catalog  => https://localhost:7200
+Discount => https://localhost:7201
