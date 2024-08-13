@@ -1,0 +1,6 @@
+@EShopper.SignalR_HostAddress = http://localhost:5162
+
+GET {{EShopper.SignalR_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

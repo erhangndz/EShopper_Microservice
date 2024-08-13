@@ -28,17 +28,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requirements", "Requirement
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.Discount", "Services\Discount\EShopper.Discount\EShopper.Discount.csproj", "{914BA338-230A-44C6-A690-512937C510A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopper.Order.EntityLayer", "Services\Order\EShopper.Order.EntityLayer\EShopper.Order.EntityLayer.csproj", "{2FE6D9AE-370A-486A-A93B-503BE6EE51FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.Order.EntityLayer", "Services\Order\EShopper.Order.EntityLayer\EShopper.Order.EntityLayer.csproj", "{2FE6D9AE-370A-486A-A93B-503BE6EE51FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopper.Order.DataAccessLayer", "Services\Order\EShopper.Order.DataAccessLayer\EShopper.Order.DataAccessLayer.csproj", "{47B6D2FB-C04B-4404-81D7-822D16726DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.Order.DataAccessLayer", "Services\Order\EShopper.Order.DataAccessLayer\EShopper.Order.DataAccessLayer.csproj", "{47B6D2FB-C04B-4404-81D7-822D16726DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopper.Order.BusinessLayer", "Services\Order\EShopper.Order.BusinessLayer\EShopper.Order.BusinessLayer.csproj", "{D736F886-2264-44FE-9CA7-431CDB9E0BEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.Order.BusinessLayer", "Services\Order\EShopper.Order.BusinessLayer\EShopper.Order.BusinessLayer.csproj", "{D736F886-2264-44FE-9CA7-431CDB9E0BEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopper.Order.WebApi", "Services\Order\EShopper.Order.WebApi\EShopper.Order.WebApi.csproj", "{9ED0787C-72CB-4D69-8F3D-132E5BB1D649}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.Order.WebApi", "Services\Order\EShopper.Order.WebApi\EShopper.Order.WebApi.csproj", "{9ED0787C-72CB-4D69-8F3D-132E5BB1D649}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopper.Order.DtoLayer", "Services\Order\EShopper.Order.DtoLayer\EShopper.Order.DtoLayer.csproj", "{D0A5CC03-2640-4250-B7AE-EDE070584DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.Order.DtoLayer", "Services\Order\EShopper.Order.DtoLayer\EShopper.Order.DtoLayer.csproj", "{D0A5CC03-2640-4250-B7AE-EDE070584DF9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{EA418A78-9019-4EFF-A817-B1A237DF56B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{7CDB675D-1137-48C7-AEEF-E7F2AD6C5D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopper.SignalR", "Services\SignalR\EShopper.SignalR\EShopper.SignalR.csproj", "{82896BC4-2AA8-4E45-9BC0-928371CA01A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +78,10 @@ Global
 		{D0A5CC03-2640-4250-B7AE-EDE070584DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0A5CC03-2640-4250-B7AE-EDE070584DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0A5CC03-2640-4250-B7AE-EDE070584DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82896BC4-2AA8-4E45-9BC0-928371CA01A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82896BC4-2AA8-4E45-9BC0-928371CA01A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82896BC4-2AA8-4E45-9BC0-928371CA01A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82896BC4-2AA8-4E45-9BC0-928371CA01A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +99,8 @@ Global
 		{D736F886-2264-44FE-9CA7-431CDB9E0BEF} = {EAE29FAB-200B-40CC-8569-CB4EC4C926A4}
 		{9ED0787C-72CB-4D69-8F3D-132E5BB1D649} = {EAE29FAB-200B-40CC-8569-CB4EC4C926A4}
 		{D0A5CC03-2640-4250-B7AE-EDE070584DF9} = {EAE29FAB-200B-40CC-8569-CB4EC4C926A4}
+		{7CDB675D-1137-48C7-AEEF-E7F2AD6C5D51} = {C4552F96-CD1D-4E54-844B-1156E4565565}
+		{82896BC4-2AA8-4E45-9BC0-928371CA01A1} = {7CDB675D-1137-48C7-AEEF-E7F2AD6C5D51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E11634AA-9D9C-432E-A981-6ECE546124EF}
