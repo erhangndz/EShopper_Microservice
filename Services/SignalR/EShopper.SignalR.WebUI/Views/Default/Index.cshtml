@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Kargo Anlık İstatistikleri</h1>
+@section Scripts{
+
+
+<div class="row">
+    <div class="col-12">
+
+        <script type="text/javascript">
+            $(document).ready(() => {
+                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7203/signalrhub").build();
+                $("#conStatus").text(connection.state);
+
+                connection.start().then(() => {
+                    $("#conStatus").text(connection.state);
+                }).catch((err) => {
+                    console.log(err)
+                });
+
+            });
+        </script>
+       
+    </div>
+</div>
+
+}
+
+
+        <div class="alert alert-info">
+
+       Bağlantının Durumu: <strong id="conStatus"></strong>
+</div>
