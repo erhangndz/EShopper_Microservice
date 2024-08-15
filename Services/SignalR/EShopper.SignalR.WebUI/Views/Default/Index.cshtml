@@ -1,37 +1,83 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 
 
 <h1>Kargo Anlık İstatistikleri</h1>
-@section Scripts{
+@section Scripts {
 
 
-<div class="row">
-    <div class="col-12">
+    <div class="row">
+        <div class="col-12">
 
-        <script type="text/javascript">
-            $(document).ready(() => {
-                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7203/signalrhub").build();
-                $("#conStatus").text(connection.state);
-
-                connection.start().then(() => {
+            <script type="text/javascript">
+                $(document).ready(() => {
+                    var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7203/signalrhub").build();
                     $("#conStatus").text(connection.state);
-                }).catch((err) => {
-                    console.log(err)
-                });
 
-            });
-        </script>
-       
+                    connection.start().then(() => {
+                        $("#conStatus").text(connection.state);
+
+                        // connection.invoke("TotalDeliveryCount");
+                        // connection.invoke("TotalDeliveryCountByStatusYolda");
+                        // connection.invoke("TotalDeliveryCountByStatusHazirlaniyor");
+                        // connection.invoke("TotalDeliveryCountByStatusTeslimEdildi");
+
+                        setInterval(() => {
+                            connection.invoke("TotalDeliveryCount");
+                        }, 1000);
+                        setInterval(() => {
+                            connection.invoke("TotalDeliveryCountByStatusYolda");
+                        }, 1000);
+                        setInterval(() => {
+                            connection.invoke("TotalDeliveryCountByStatusHazirlaniyor");
+                        }, 1000);
+                        setInterval(() => {
+                            connection.invoke("TotalDeliveryCountByStatusTeslimEdildi");
+                        }, 1000);
+
+
+
+                    }).catch((err) => {
+                        console.log(err)
+                    });
+
+                    connection.on("ReceiveTotalDeliveryCount", (value) => {
+                        $("#txttotalDeliveryCount").text(value);
+                    });
+
+                    connection.on("ReceiveTotalDeliveryCountByStatusYolda", (value) => {
+                        $("#txtCountByStatusYolda").text(value);
+                    });
+
+                    connection.on("ReceiveTotalDeliveryCountByStatusHazirlaniyor", (value) => {
+                        $("#txtCountByStatusHazirlaniyor").text(value);
+                    });
+
+                    connection.on("ReceiveTotalDeliveryCountByStatusTeslimEdildi", (value) => {
+                        $("#txtCountByStatusTeslimEdildi").text(value);
+                    });
+
+
+
+                });
+            </script>
+
+        </div>
     </div>
-</div>
 
 }
 
+<div class="row">
 
-        <div class="alert alert-info">
+<div class="alert alert-info">Bağlantının Durumu: <strong id="conStatus"></strong></div>
+    <br />
+<div class="alert alert-warning">Toplam Sipariş Sayısı: <strong id="txttotalDeliveryCount"></strong></div>
+    <br />
+    <div class="alert alert-danger">Yoldaki Sipariş Sayısı: <strong id="txtCountByStatusYolda"></strong></div>
+    <br />
+    <div class="alert alert-success">Hazırlanıyor Olan Sipariş Sayısı: <strong id="txtCountByStatusHazirlaniyor"></strong></div>
+    <br />
+    <div class="alert alert-primary">Teslim Edilen Sipariş Sayısı: <strong id="txtCountByStatusTeslimEdildi"></strong></div>
 
-       Bağlantının Durumu: <strong id="conStatus"></strong>
 </div>
