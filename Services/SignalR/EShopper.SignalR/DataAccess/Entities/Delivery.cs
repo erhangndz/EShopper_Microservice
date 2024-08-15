@@ -10,6 +10,6 @@ namespace EShopper.SignalR.DataAccess.Entities
         public string Status { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
-        public decimal TotalPrice { get => Quantity * Price; }
+        public decimal TotalPrice { get => (decimal)Quantity * (decimal)Price; }
     }
 }

@@ -39,5 +39,11 @@ namespace EShopper.SignalR.Hubs
             await Clients.All.SendAsync("ReceiveTotalDeliveryCountByStatusTeslimEdildi", value);
         }
 
+        public async Task GetDeliveryList()
+        {
+            var value = _context.Deliveries.ToList();
+            await Clients.All.SendAsync("ReceiveDeliveryList", value);
+        }
+
     }
 }
