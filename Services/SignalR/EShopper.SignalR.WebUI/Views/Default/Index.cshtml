@@ -25,17 +25,11 @@
 
                         setInterval(() => {
                             connection.invoke("TotalDeliveryCount");
-                        }, 1000);
-                        setInterval(() => {
                             connection.invoke("TotalDeliveryCountByStatusYolda");
-                        }, 1000);
-                        setInterval(() => {
                             connection.invoke("TotalDeliveryCountByStatusHazirlaniyor");
-                        }, 1000);
-                        setInterval(() => {
                             connection.invoke("TotalDeliveryCountByStatusTeslimEdildi");
                         }, 1000);
-
+                        
 
 
                     }).catch((err) => {
