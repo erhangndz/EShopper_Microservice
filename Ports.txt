@@ -1,3 +1,5 @@
+IdentityServer => https://localhost:5001
+
 Catalog  => https://localhost:7200
 Discount => https://localhost:7201
 Order    => https://localhost:7202

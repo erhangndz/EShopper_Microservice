@@ -42,9 +42,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{EA41
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{7CDB675D-1137-48C7-AEEF-E7F2AD6C5D51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopper.SignalR", "Services\SignalR\EShopper.SignalR\EShopper.SignalR.csproj", "{82896BC4-2AA8-4E45-9BC0-928371CA01A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.SignalR", "Services\SignalR\EShopper.SignalR\EShopper.SignalR.csproj", "{82896BC4-2AA8-4E45-9BC0-928371CA01A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopper.SignalR.WebUI", "Services\SignalR\EShopper.SignalR.WebUI\EShopper.SignalR.WebUI.csproj", "{B07AD195-5286-4441-84E1-04567795B2CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.SignalR.WebUI", "Services\SignalR\EShopper.SignalR.WebUI\EShopper.SignalR.WebUI.csproj", "{B07AD195-5286-4441-84E1-04567795B2CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopper.IdentityServer", "IdentityServer\EShopper.IdentityServer\EShopper.IdentityServer.csproj", "{941C1934-398C-4EFE-A9B1-8430144815A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +90,10 @@ Global
 		{B07AD195-5286-4441-84E1-04567795B2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B07AD195-5286-4441-84E1-04567795B2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B07AD195-5286-4441-84E1-04567795B2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{941C1934-398C-4EFE-A9B1-8430144815A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{941C1934-398C-4EFE-A9B1-8430144815A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{941C1934-398C-4EFE-A9B1-8430144815A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{941C1934-398C-4EFE-A9B1-8430144815A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{7CDB675D-1137-48C7-AEEF-E7F2AD6C5D51} = {C4552F96-CD1D-4E54-844B-1156E4565565}
 		{82896BC4-2AA8-4E45-9BC0-928371CA01A1} = {7CDB675D-1137-48C7-AEEF-E7F2AD6C5D51}
 		{B07AD195-5286-4441-84E1-04567795B2CF} = {7CDB675D-1137-48C7-AEEF-E7F2AD6C5D51}
+		{941C1934-398C-4EFE-A9B1-8430144815A2} = {212799CB-0E23-4ED1-9E77-69773B06BE7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E11634AA-9D9C-432E-A981-6ECE546124EF}
