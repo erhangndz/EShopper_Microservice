@@ -1,23 +1,22 @@
-using EShopper.Discount.Context;
-using EShopper.Discount.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using EShopper.Message.Application.Features.Mediator.Handlers;
+using EShopper.Message.Application.Interfaces;
+using EShopper.Message.Persistence.Concrete;
+using EShopper.Message.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddScoped<ICouponService,CouponService>();
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddMediatR(cfg =>
 {
-    opt.Authority = builder.Configuration["IdentityServerUrl"];
-    opt.Audience = "resource_discount";
+    cfg.RegisterServicesFromAssemblyContaining<CreateMessageCommandHandler>();
 });
-
-builder.Services.AddDbContext<DiscountContext>(opt =>
+builder.Services.AddDbContext<MessageContext>(options =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
