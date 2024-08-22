@@ -9,7 +9,7 @@ builder.Services.AddScoped<IBasketService,BasketService>();
 builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings"));
 
 builder.Services.AddSingleton<RedisService>(sp =>
-{
+{ 
     var settings = sp.GetRequiredService<IOptions<RedisSettings>>().Value;
     var redis = new RedisService(settings.Host, settings.Port);
     redis.Connect();
