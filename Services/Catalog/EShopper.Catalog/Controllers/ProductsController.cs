@@ -2,11 +2,13 @@
 using EShopper.Catalog.Dtos.ProductDtos;
 using EShopper.Catalog.Entities;
 using EShopper.Catalog.Services.ProductServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EShopper.Catalog.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase

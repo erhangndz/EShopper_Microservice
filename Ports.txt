@@ -5,3 +5,4 @@ Discount => https://localhost:7201
 Order    => https://localhost:7202
 SignalR  => https://localhost:7203
 Message  => https://localhost:7204
+Basket   => https://localhost:7205

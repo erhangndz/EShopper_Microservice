@@ -24,6 +24,7 @@ namespace EShopper.IdentityServer
             new ApiResource("resource_catalog"){Scopes={"catalog_fullpermission", "catalog_readpermission"}},
             new ApiResource("resource_discount"){Scopes={"discount_fullpermission"}},
             new ApiResource("resource_order"){Scopes={"order_fullpermission"}},
+            new ApiResource("resource_basket"){Scopes={"basket_fullpermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -34,6 +35,7 @@ namespace EShopper.IdentityServer
                 new ApiScope("catalog_readpermission","Reading Permission for catalog service"),
                 new ApiScope("discount_fullpermission","Full Permission for discount operations"),
                 new ApiScope("order_fullpermission","Full Permission for Order operations"),
+                new ApiScope("basket_fullpermission","Full Permission for Basket operations"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -48,7 +50,7 @@ namespace EShopper.IdentityServer
                     ClientName="EShopper Admin User",
                     ClientSecrets={new Secret("secret".Sha256())},
                     AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,
-                    AllowedScopes={ "catalog_fullpermission", "discount_fullpermission", "order_fullpermission", IdentityServerConstants.LocalApi.ScopeName, 
+                    AllowedScopes={ "catalog_fullpermission", "basket_fullpermission", "discount_fullpermission", "order_fullpermission", IdentityServerConstants.LocalApi.ScopeName, 
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile
